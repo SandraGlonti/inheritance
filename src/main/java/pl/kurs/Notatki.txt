@@ -1,0 +1,49 @@
+Dziedziczenie służy do budowania abstrakcji otaczającego nas świata i
+dokładnie oznacza przejmowanie pewnych cech i funkcjonalności z innych typów (klas),
+ inaczej od typu bardziej ogólnego do typu bardziej szczegółowego.
+W Javie nie ma wielodziedziczenia! Każda klasa może rozszerzać tylko jedną klasę
+i każda klasa może być rozszerzana przez wiele klas.
+
+Klasy ElectricVehivle oraz InternalCombustionVehicle są klasami podrzędnymi
+(pochodnymi) klasy Vehicle – to oznacza, że przejmują wszystkie jej widoczne
+cechy i funkcjonalności.
+Klasa Vehicle jest klasą nadrzędną (bazową) i nie ma pojęcia o istnieniu klas,
+ które po niej dziedziczą.
+
+Zaskakująca rzecz zachodzi, kiedy zmienimy modyfikatory dostępu do pól w
+klasie bazowej na prywatne – wtedy mimo, że te pola również niejawnie znajdują
+się w klasach pochodnych to i tak nie mamy do nich dostępu –
+musimy użyć getterów i seterów.
+
+
+Dziedziczenie metod i konstruktorów:
+Konstruktory nie są dziedziczone ale można wywołać konstruktor klasy
+ bazowej z konstruktora klasy pochodnej.
+
+Podsumowanie:
+Kursantka musi wiedzieć:
+•	Pierwszą instrukcją w konstruktorze jest zawsze super();
+•	Instrukcja super() w konstruktorze wywołuje konstruktor klasy nadrzędnej;
+•	Używając super.nazwaMetody() w klasie pochodnej możesz odwołać się do
+oryginalnej implementacji metody klasy bazowej;
+•	Słowo final przed nazwą class blokuje możliwość rozszerzania tej klasy;
+•	Słowo final użyte w metodzie klasy bazowej (przed typem zwracanym) blokuje
+możliwość nadpisywania tej metody w klasach pochodnych;
+
+
+Praca domowa_1
+Stwórz taką o to hierarchię klas odwzorowującą bohaterów komiksów:
+ - Każdy z herosów (Hero) przechowuje imię oraz nazwę supermocy
+- Każdy ludzki heros (HumanHero) przechowuje dodatkowo swoją odporność na
+obrażenia wyrażoną w double (Proszę rozważyć Deadpool’a, który jest nieśmiertelny ;P),
+ a każdy boski heros (GodHero) posiada informację z jakiego świata pochodzi (np. Thor).
+- dodatkowo każdy boski heros (GodHero) ma podtyp łobuzerskiego boskiego
+herosa (RogueGodHero), który przechowuje dodatkowo poziom dobroci w doublu
+ (rozważ przypadek brata Thora – Lokiego, który jest nieskończoną szują ;D)
+
+Klasa Hero ma zawierać również metodę battlecry() (okrzyk bojowy),
+który będzie wyświetlał w konsoli „To the battle!!!” a każdy dziedziczący
+typ ma tylko dodawać swój unikalny okrzyk bojowy do tego standardowego okrzyku.
+W klasie HeroRunner stwórz wymienionych w zadaniu herosów
+(DeadPool’a, Thor’a, Loki’ego) oraz kilku swoich i wyświetl ich dane w konsoli.
+ Przetestuj też ich okrzyki bojowe.
